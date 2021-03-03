@@ -1,6 +1,0 @@
-Textbook3
-1	こんにちは、世界	Hello, World!
-2	こんにちは、世界	Hello, World!
-3	こんにちは、世界	Hello, World!
-4	こんにちは、世界	Hello, World!
-5	こんにちは、世界	Hello, World!
