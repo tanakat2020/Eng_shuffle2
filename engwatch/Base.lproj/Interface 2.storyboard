@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16097" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch44"/>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="engwatch" customModuleProvider="target">
+                    <items>
+                        <group width="1" height="55" alignment="left" id="bie-vM-BWu">
+                            <items>
+                                <button width="110" height="110" alignment="left" title="Playback" id="wj5-cQ-B4s">
+                                    <connections>
+                                        <action selector="tapmyButton3" destination="AgC-eL-Hgc" id="WGS-hU-NNg"/>
+                                    </connections>
+                                </button>
+                                <button width="71" height="94" alignment="left" verticalAlignment="center" title="Good" id="eQb-n2-ay4">
+                                    <connections>
+                                        <action selector="tapmyButton1" destination="AgC-eL-Hgc" id="750-J2-Kbm"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <label width="181" alignment="center" text="Bill just wanted to comfort Monica, but she interpreted it as romantic interest." textAlignment="left" numberOfLines="100" minimumScaleFactor="0.90000000000000002" id="T0d-5V-dXc">
+                            <gestureRecognizers>
+                                <swipeGestureRecognizer direction="2" id="zAW-tr-mX5">
+                                    <connections>
+                                        <action selector="leftSwipe:" destination="AgC-eL-Hgc" id="6ze-H7-WYd"/>
+                                    </connections>
+                                </swipeGestureRecognizer>
+                                <swipeGestureRecognizer id="ToV-op-638">
+                                    <connections>
+                                        <action selector="rightSwipe:" destination="AgC-eL-Hgc" id="XyX-px-JQf"/>
+                                    </connections>
+                                </swipeGestureRecognizer>
+                                <tapGestureRecognizer id="LeE-PA-7oa">
+                                    <connections>
+                                        <action selector="tapRecognized:" destination="AgC-eL-Hgc" id="61g-EU-MEk"/>
+                                    </connections>
+                                </tapGestureRecognizer>
+                            </gestureRecognizers>
+                        </label>
+                        <button width="1" height="60" alignment="left" title="Good" id="Fo1-hG-AUr">
+                            <connections>
+                                <action selector="tapmyButton1" destination="AgC-eL-Hgc" id="V3Q-yh-mmL"/>
+                            </connections>
+                        </button>
+                        <button width="1" height="60" alignment="left" title="Back" id="DOh-eI-5ce">
+                            <connections>
+                                <action selector="tapmyButton2" destination="AgC-eL-Hgc" id="755-1M-CFY"/>
+                            </connections>
+                        </button>
+                        <button width="1" height="62" alignment="left" title="Test" id="eVo-HU-LKj">
+                            <connections>
+                                <action selector="musicplay" destination="AgC-eL-Hgc" id="q05-Mp-Ms6"/>
+                            </connections>
+                        </button>
+                        <group width="1" alignment="left" id="rbd-3N-p2l">
+                            <items>
+                                <button width="87" alignment="left" title="音量−" id="p3Q-MS-Bcx">
+                                    <connections>
+                                        <action selector="VoldownButton" destination="AgC-eL-Hgc" id="GcY-zd-YoP"/>
+                                    </connections>
+                                </button>
+                                <button width="93" height="103" alignment="left" title="音量＋" id="vtj-VN-91Z">
+                                    <connections>
+                                        <action selector="volupButton" destination="AgC-eL-Hgc" id="vPl-VW-Mod"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="goodButton" destination="eQb-n2-ay4" id="xO2-Wx-zQc"/>
+                        <outlet property="myButton2" destination="DOh-eI-5ce" id="pEg-Io-FFl"/>
+                        <outlet property="myButton3" destination="wj5-cQ-B4s" id="60R-XD-8PF"/>
+                        <outlet property="myLabel1" destination="T0d-5V-dXc" id="w3K-yl-kJa"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="219.52173913043478" y="363.90625"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" numberOfLines="0" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                        <segue destination="eXb-UN-Cd0" kind="relationship" relationship="dynamicInteractiveNotificationInterface" id="mpB-YA-K8N"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="engwatch" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="Niz-AI-uX2">
+            <objects>
+                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="engwatch" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="345"/>
+        </scene>
+    </scenes>
+</document>
