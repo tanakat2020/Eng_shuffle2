@@ -390,6 +390,201 @@ class SettingViewController: UIViewController {
     }
     
     
+    @IBAction func load_resultC_Button(_ sender: Any) {
+        
+        let filename = "resultC.txt"
+        
+        var dataList:[String] = []
+        var dataList2:[String] = []
+        
+        //CSVファイルの保存先
+        var userPath:String!
+        
+        do {
+            
+            //ユーザーが保存したCSVファイルのパス
+            userPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + "/" + filename
+            
+            let path = userPath
+            
+            //CSVファイルのデータを取得する。
+            let csvData = try String(contentsOfFile:path!, encoding:String.Encoding.utf8)
+            //print("csvData: ", csvData)
+            
+            //改行区切りでデータを分割して配列に格納する。
+            dataList = csvData.components(separatedBy: "\n")
+            
+            //TextBook1
+            var ItemNo = 0
+//            print("itemNo: ", itemNo)
+//
+//            print("dataList[3]: ", dataList[4])
+            Bookarray[ItemNo].saveSentenceNoInit(SentenceNoInit: Int(dataList[4])!)
+            
+//            print("load resultC.txt")
+//            for i in 0...10 {
+//                print(dataList[i])
+//            }
+            
+            for i in 1+4...560+4 {
+                dataList2 = dataList[i].components(separatedBy: ",")
+                
+                let SentenceNo = Int(dataList2[0])! - 1
+//                print("dataList2[0]:", dataList2[0])
+//                print("dataList2[1]:", dataList2[1])
+//                print("dataList2[2]:", dataList2[2])
+                    
+                Bookarray[ItemNo].SentenceArray[SentenceNo].saveUserDefaultsInt(
+                    value: Int(dataList2[1])!,
+                    filename: Bookarray[ItemNo].filename,
+                    SentenceNo: SentenceNo,
+                    key: "answercountKey")
+                
+                Bookarray[ItemNo].SentenceArray[SentenceNo].saveUserDefaultsInt(
+                    value: Int(dataList2[2])!,
+                    filename: Bookarray[ItemNo].filename,
+                    SentenceNo: SentenceNo,
+                    key: "answerCheckKey")
+                
+                Bookarray[ItemNo].SentenceArray[SentenceNo].saveUserDefaultsInt(
+                    value: Int(dataList2[3])!,
+                    filename: Bookarray[ItemNo].filename,
+                    SentenceNo: SentenceNo,
+                    key: "trycountKey")
+                
+                Bookarray[ItemNo].SentenceArray[SentenceNo].saveUserDefaultsString(
+                    Text: dataList2[4],
+                    filename: Bookarray[ItemNo].filename,
+                    SentenceNo: SentenceNo,
+                    key: "trydateKey")
+                
+            }
+            
+            //TextBook2
+            ItemNo = 1
+            Bookarray[ItemNo].saveSentenceNoInit(SentenceNoInit: Int(dataList[560+4+2])!)
+            
+            print("Bookarray[0].filename: ", Bookarray[0].filename)
+            print("Bookarray[1].filename: ", Bookarray[1].filename)
+            
+            for i in 1+566...410+566 {
+                dataList2 = dataList[i].components(separatedBy: ",")
+                
+                let SentenceNo = Int(dataList2[0])! - 1
+//                print("dataList2[0]:", dataList2[0])
+//                print("dataList2[1]:", dataList2[1])
+//                print("dataList2[2]:", dataList2[2])
+                    
+                Bookarray[ItemNo].SentenceArray[SentenceNo].saveUserDefaultsInt(
+                    value: Int(dataList2[1])!,
+                    filename: Bookarray[ItemNo].filename,
+                    SentenceNo: SentenceNo,
+                    key: "answercountKey")
+                
+                Bookarray[ItemNo].SentenceArray[SentenceNo].saveUserDefaultsInt(
+                    value: Int(dataList2[2])!,
+                    filename: Bookarray[ItemNo].filename,
+                    SentenceNo: SentenceNo,
+                    key: "answerCheckKey")
+                
+                Bookarray[ItemNo].SentenceArray[SentenceNo].saveUserDefaultsInt(
+                    value: Int(dataList2[3])!,
+                    filename: Bookarray[ItemNo].filename,
+                    SentenceNo: SentenceNo,
+                    key: "trycountKey")
+                
+                Bookarray[ItemNo].SentenceArray[SentenceNo].saveUserDefaultsString(
+                    Text: dataList2[4],
+                    filename: Bookarray[ItemNo].filename,
+                    SentenceNo: SentenceNo,
+                    key: "trydateKey")
+                
+            }
+
+            //TextBook3
+            ItemNo = 2
+            Bookarray[ItemNo].saveSentenceNoInit(SentenceNoInit: Int(dataList[410+566+2])!)
+            
+            for i in 1+410+566+2...100+410+566+2 {
+                dataList2 = dataList[i].components(separatedBy: ",")
+                
+                let SentenceNo = Int(dataList2[0])! - 1
+//                print("dataList2[0]:", dataList2[0])
+//                print("dataList2[1]:", dataList2[1])
+//                print("dataList2[2]:", dataList2[2])
+                    
+                Bookarray[ItemNo].SentenceArray[SentenceNo].saveUserDefaultsInt(
+                    value: Int(dataList2[1])!,
+                    filename: Bookarray[ItemNo].filename,
+                    SentenceNo: SentenceNo,
+                    key: "answercountKey")
+                
+                Bookarray[ItemNo].SentenceArray[SentenceNo].saveUserDefaultsInt(
+                    value: Int(dataList2[2])!,
+                    filename: Bookarray[ItemNo].filename,
+                    SentenceNo: SentenceNo,
+                    key: "answerCheckKey")
+                
+                Bookarray[ItemNo].SentenceArray[SentenceNo].saveUserDefaultsInt(
+                    value: Int(dataList2[3])!,
+                    filename: Bookarray[ItemNo].filename,
+                    SentenceNo: SentenceNo,
+                    key: "trycountKey")
+                
+                Bookarray[ItemNo].SentenceArray[SentenceNo].saveUserDefaultsString(
+                    Text: dataList2[4],
+                    filename: Bookarray[ItemNo].filename,
+                    SentenceNo: SentenceNo,
+                    key: "trydateKey")
+                
+            }
+            
+            //TextBook4
+            ItemNo = 3
+            Bookarray[ItemNo].saveSentenceNoInit(SentenceNoInit: Int(dataList[100+410+566+2+2])!)
+            
+            for i in 1+100+410+566+2+2...22+100+410+566+2+2 {
+                dataList2 = dataList[i].components(separatedBy: ",")
+                
+                let SentenceNo = Int(dataList2[0])! - 1
+//                print("dataList2[0]:", dataList2[0])
+//                print("dataList2[1]:", dataList2[1])
+//                print("dataList2[2]:", dataList2[2])
+                    
+                Bookarray[ItemNo].SentenceArray[SentenceNo].saveUserDefaultsInt(
+                    value: Int(dataList2[1])!,
+                    filename: Bookarray[ItemNo].filename,
+                    SentenceNo: SentenceNo,
+                    key: "answercountKey")
+                
+                Bookarray[ItemNo].SentenceArray[SentenceNo].saveUserDefaultsInt(
+                    value: Int(dataList2[2])!,
+                    filename: Bookarray[ItemNo].filename,
+                    SentenceNo: SentenceNo,
+                    key: "answerCheckKey")
+                
+                Bookarray[ItemNo].SentenceArray[SentenceNo].saveUserDefaultsInt(
+                    value: Int(dataList2[3])!,
+                    filename: Bookarray[ItemNo].filename,
+                    SentenceNo: SentenceNo,
+                    key: "trycountKey")
+                
+                Bookarray[ItemNo].SentenceArray[SentenceNo].saveUserDefaultsString(
+                    Text: dataList2[4],
+                    filename: Bookarray[ItemNo].filename,
+                    SentenceNo: SentenceNo,
+                    key: "trydateKey")
+                
+            }
+            
+        } catch {
+            print(error)
+        }
+        
+        
+        
+    }
+    
     //resultB.txt表示
     @IBAction func DisplayresultBtext(_ sender: Any) {
         
@@ -565,7 +760,6 @@ class SettingViewController: UIViewController {
     @IBAction func Send3Button(_ sender: Any) {
         SendTextFile(filename: "log.txt")
     }
-    
     
     @IBAction func CloseButton(_ sender: Any) {
         

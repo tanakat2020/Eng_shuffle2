@@ -3301,6 +3301,8 @@ extension UIColor {
 // 2020/05/30 システムボリュームを変更できるようした
 // 2021/02/20 watchOS7に対応。文字盤が更新できるように修正した。0:00に文字盤の問題取り組み数が0にリセットされるはず。
 // 2021/02/20 メモ todayExtension は deprecated（非推奨）になった。WidgetKit を使うことが推奨になるようだ。
+// 2021/03/02 GitHubにアップロードするように変更
+// 2021/03/06 load_resultC_Button resultCを読み込んで、userDefaultsに保存するようにした
 
 //Eng_shuffle1にする時の変更点
 //Display Name (本体)

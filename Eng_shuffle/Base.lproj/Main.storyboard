@@ -719,6 +719,15 @@ mode</string>
                                     <action selector="CloseButton:" destination="6Je-9a-4yx" eventType="touchUpInside" id="U2m-3v-qXe"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="AxM-Of-MiN">
+                                <rect key="frame" x="240" y="512" width="57" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="19"/>
+                                <state key="normal" title="ロード"/>
+                                <connections>
+                                    <action selector="load_resultC_Button:" destination="6Je-9a-4yx" eventType="touchUpInside" id="Bgb-Vb-FZi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
